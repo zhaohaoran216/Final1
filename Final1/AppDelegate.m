@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    RootViewController* rootViewController = [[RootViewController alloc]init];
+    rootViewController.title = @"东南大学九龙湖校区";
+    
+    _nav = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    self.window.rootViewController = _nav;
+
+    //rootViewController = nil;
+   // _nav = nil;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
